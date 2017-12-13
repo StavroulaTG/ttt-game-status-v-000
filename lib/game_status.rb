@@ -15,6 +15,7 @@ WIN_COMBINATIONS = [
   [6,4,2]
 ]
 
+
 def won?(board)
   WIN_COMBINATIONS.each do |index|
     if (board[index[0]] == "X" && board[index[1]] == "X" && board[index[2]] == "X") ||
@@ -26,9 +27,11 @@ def won?(board)
   false
 end
 
+
 def full?(board)
   board.none? {|i| i == " "}
 end
+
 
 def draw?(board)
   if full?(board) && !won?(board)
@@ -36,9 +39,11 @@ def draw?(board)
   end
 end
 
+
 def over?(board)
   won?(board) || full?(board) || draw?(board)
 end
+
 
 def winner(board)
   if winner = won?(board)
